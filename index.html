@@ -1,8 +1,452 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <favicon></favicon>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coursty | Home</title>
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+
+    <!-- icon - font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h2>Hello World!!!</h2>
+    <header id="navigation">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <h1><a href="/">Coursty</a></h1>
+          </div>
+
+          <nav class="navbar-content">
+            <ul id="nav" class=".nav-slide">
+              <li><a href="#home" class="nav-link active">Home</a></li>
+              <li><a href="#about" class="nav-link">About</a></li>
+              <li>
+                <a href="#course" class="nav-link nav-course">Course <span class="segitiga">&#11206;</span> </a>
+
+                <div class="course-dropdown">
+                  <a href="#us">UTBK</a>
+                  <a href="#utbk">Ujian Sekolah</a>
+                  <a href="#cpns">CPNS</a>
+                </div>
+              </li>
+              <li><a href="#testimony" class="nav-link">Testimony</a></li>
+              <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <nav class="nav-responsive">
+              <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+            </nav>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <article id="home">
+        <div class="home-content">
+          <div class="container home-mx flex">
+            <section class="kata-welcome">
+              <p class="title-wel">Selamat datang di</p>
+              <h1>Coursty Learning</h1>
+              <p>
+                Pusat Kursus Terspecialisasi dalam Mempersiapkan Anda untuk Ujian Tertulis yang Kritis: UTBK, Ujian Sekolah, dan CPNS. Kami adalah mitra pembelajaran Anda yang setia, dengan fokus tajam pada memberikan pelatihan berkualitas
+                tinggi yang mengarah pada keberhasilan dalam ujian yang menentukan masa depan Anda.
+              </p>
+
+              <a href="#about">LEBIH DETAIL</a>
+            </section>
+
+            <aside class="img-wel">
+              <img src="img/wellcome-teacher.png" alt="wellcome" />
+            </aside>
+          </div>
+        </div>
+      </article>
+
+      <article id="about">
+        <div class="container about-mt">
+          <div class="content-about flex">
+            <div class="img-about">
+              <a href="https://youtu.be/dQw4w9WgXcQ?si=u9kNr2ZW6yGp0a8B" target="_blank" class="about-video"></a>
+            </div>
+
+            <section class="about-text">
+              <p class="title">Coursty Learning</p>
+              <h2>Siapa & Kenapa Kami?</h2>
+              <p>
+                Coursty adalah penyedia utama kursus yang dikhususkan dalam persiapan untuk ujian-ujian yang penting dalam karier pendidikan dan pemerintahan, seperti UTBK, ujian sekolah, dan tes CPNS. Kami telah berkomitmen untuk
+                memberikan pelayanan pembelajaran yang luar biasa sejak tahun 2023, dan sejak itu, telah membantu ribuan peserta ujian mencapai hasil yang luar biasa.
+              </p>
+              <p>Kami dengan bangga menjadi bagian dari perjalanan Anda menuju pencapaian prestasi tinggi dan karier yang sukses.</p>
+
+              <div class="pemilik">
+                <div class="lingkaran">
+                  <img src="img/founder.jpeg" alt="Manusia" />
+                </div>
+
+                <div class="identitas">
+                  <h4>Leira Wardana</h4>
+                  <p>Direktur</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <article id="course">
+        <h2 class="container">Course</h2>
+        <p class="paragraph">Berikut adalah jenis kursus yang kami sediakan</p>
+        <div class="bg-course">
+          <section class="container">
+            <div class="flex course-content">
+              <a href="#mohon-maaf-kack" id="myCourse1" class="card-a" onfocus="tampilkanModal(1)">
+                <div class="course-card" id="utbk">
+                  <div class="img-course">
+                    <img src="img/course-1.jpg" alt="Gambar 1" />
+                    <h3>UTBK</h3>
+                    <div class="course-p">
+                      <p><i class="fa-solid fa-user"></i> 300 Siswa</p>
+                      <span class="bintang">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#mohon-maaf-kack" id="myCourse2" class="card-a" onfocus="tampilkanModal(2)">
+                <div class="course-card" id="us">
+                  <div class="img-course">
+                    <img src="img/course-2.jpg" alt="Gambar 2" />
+                    <h3>Ujian Sekolah</h3>
+                    <div class="course-p">
+                      <p><i class="fa-solid fa-user"></i> 300 Siswa</p>
+                      <span class="bintang">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#mohon-maaf-kack" id="myCourse3" class="card-a" onfocus="tampilkanModal(3)">
+                <div class="course-card" id="cpns">
+                  <div class="img-course">
+                    <img src="img/course-3.jpg" alt="Gambar 3" />
+                    <h3>CPNS</h3>
+                    <div class="course-p">
+                      <p><i class="fa-solid fa-user"></i> 300 Siswa</p>
+                      <span class="bintang">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <div id="courseModal" class="course-modal">
+                <div class="course-modal-content">
+                  <span class="close" id="closeBtn">&times;</span>
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <h3>Mohon Maaf Ya Kack</h3>
+                  <p>Ini adalah pengumuman, pura-puranya fitur belum tersedia hehehe😇</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="btn-c">
+          <button id="myCourse4" class="btn-course" onfocus="tampilkanModal(4)">Course Lainnya</button>
+        </div>
+
+        <div class="meng-pilih">
+          <section class="container">
+            <div class="flex tutor-kami">
+              <div class="course-card2">
+                <h3>1. <span>Pilih Kelas</span></h3>
+                <p>Mulai perjalanan belajar Anda dengan memilih kelas yang sesuai dari berbagai pilihan yang kami tawarkan.</p>
+              </div>
+
+              <div class="course-card2">
+                <h3>2. <span>Hubungi Kami</span></h3>
+                <p>Tim kami siap membantu dan memberikan panduan untuk memastikan pengalaman belajar Anda optimal.</p>
+              </div>
+
+              <div class="course-card2">
+                <h3>3. <span>Belajar Bersama</span></h3>
+                <p>Hadapi tantangan bersama-sama dan jelajahi dunia pengetahuan, Mari kita wujudkan potensi maksimal kita saat belajar bersama di sini !</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="apa-yang-dilakukan">
+          <h2>Apa yang sering kami lakukan?</h2>
+          <p class="title2">Berikut merupakan kegiatan yang kami lakukan pada kursus disini</p>
+          <div class="container">
+            <div class="lkn-kami">
+              <div class="lkn-content">
+                <div class="lkn-cuy">
+                  <div class="lahh">
+                    <div class="icon-lkn">
+                      <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h3>Belajar Bersama</h3>
+                  </div>
+                  <p>Bukan sekadar kelas, pembelajaran tidak pernah membosankan karena kita menikmati setiap momen dalam suasana belajar yang penuh keceriaan dan kolaborasi.</p>
+                </div>
+
+                <div class="lkn-cuy">
+                  <div class="lahh">
+                    <div class="icon-lkn">
+                      <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h3>Test Kemampuan</h3>
+                  </div>
+                  <p>Dengan test kemampuan kami, Anda dapat mengevaluasi tingkat penguasaan Anda dalam berbagai aspek, membuka peluang untuk peningkatan lebih lanjut.</p>
+                </div>
+              </div>
+
+              <aside class="img-bingung">
+                <img src="img/teacher2.1.png" alt="Teacher" />
+              </aside>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article id="testimony">
+        <h2 class="title">Testimony</h2>
+        <p class="title2">Apa kata mereka tentang kami?</p>
+
+        <section class="testimony-all">
+          <div class="testimony-body">
+            <div class="container flex testi-slide">
+              <div class="testimony-card">
+                <div class="testimony-content">
+                  <div class="lingkaran">
+                    <img src="img/testi-1.jpeg" alt="testi-people" />
+                  </div>
+                  <h3 class="testimony-nama">Angeliana Fitri</h3>
+                  <span class="bintang">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </span>
+                  <p class="desc">Saya sangat puas dengan pengalaman belajar di Coursty untuk ujian sekolah. Materi yang disampaikan sangat relevan dan mudah dipahami.</p>
+                </div>
+              </div>
+
+              <div class="testimony-card">
+                <div class="testimony-content">
+                  <div class="lingkaran">
+                    <img src="img/testi-2.jpeg" alt="testi-people" />
+                  </div>
+                  <h3 class="testimony-nama">Christy Dwi Natasya</h3>
+                  <span class="bintang">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </span>
+                  <p class="desc">Saya ingin mengucapkan terima kasih kepada Coursty karena membantu saya mencapai impian saya untuk lulus ujian CPNS. Materi pelajaran yang berkualitas dan panduan tutor membuat perbedaan besar.</p>
+                </div>
+              </div>
+
+              <div class="testimony-card">
+                <div class="testimony-content">
+                  <div class="lingkaran">
+                    <img src="img/testi-3.jpeg" alt="testi-people" />
+                  </div>
+                  <h3 class="testimony-nama">Fikri Apriansyah</h3>
+                  <span class="bintang">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </span>
+                  <p class="desc">Saya merasa bahwa Coursty telah membantu saya mengatasi kecemasan sebelum ujian CPNS. Materi latihan dan ujian simulasi sangat mirip dengan ujian sebenarnya.</p>
+                </div>
+              </div>
+
+              <div class="testimony-card">
+                <div class="testimony-content">
+                  <div class="lingkaran">
+                    <img src="img/testi-4.jpeg" alt="testi-people" />
+                  </div>
+                  <h3 class="testimony-nama">Dian Eka Agustin</h3>
+                  <span class="bintang">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </span>
+                  <p class="desc">
+                    Baru saja menyelesaikan kursus UTBK, dan benar-benar puas dengan pengalaman belajar saya di sini. Materinya ga cuma teoritis, tapi juga dikasih contoh-contoh nyata yang memudahkan pemahaman. Sukses bikin aku semangat
+                    belajar
+                  </p>
+                </div>
+              </div>
+
+              <div class="testimony-card">
+                <div class="testimony-content">
+                  <div class="lingkaran">
+                    <img src="img/testi-5.jpeg" alt="testi-people" />
+                  </div>
+                  <h3 class="testimony-nama">Febri Ramdhani</h3>
+                  <span class="bintang">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </span>
+                  <p class="desc">
+                    Coursty emang juara! Instruktornya super responsif dan selalu siap bantu jawab pertanyaan. Gak cuma itu, suasana kelasnya enak banget, jadi belajar jadi lebih asyik. Bener-bener ngebantu banget buat persiapan ujian
+                    sekolah!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- tombol slider -->
+            <div class="slide-panah">
+              <button id="sebelumnya"><i class="fa-solid fa-angle-left"></i></button>
+              <button id="selanjutnya"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <article id="contact">
+        <div class="container">
+          <p class="title2"></p>
+          <div class="contact-content flex">
+            <section class="contact-us">
+              <div class="contact-card">
+                <h2>Hubungi Kami</h2>
+
+                <div class="contact-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <div class="contact-detail">
+                    <h4>LOCATION</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ab magni corrupti voluptatum non nisi expedita culpa aliquam quam nobis!</p>
+                  </div>
+                </div>
+
+                <hr />
+
+                <div class="contact-item">
+                  <i class="fa-solid fa-envelope"></i>
+                  <div class="contact-detail">
+                    <h4>EMAIL</h4>
+                    <p>demo@email.com</p>
+                  </div>
+                </div>
+
+                <hr />
+
+                <div class="contact-item">
+                  <i class="fa-solid fa-phone"></i>
+                  <div class="contact-detail">
+                    <h4>PHONE</h4>
+                    <p>+62 8622 6262 6262</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="map-us">
+              <div class="map">
+                <iframe
+                  class="lah-iya"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32674283.635390125!2d92.64906206952482!3d-1.439016133101139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c4c07d7496404b7%3A0xe37b4de71badf485!2sIndonesia!5e0!3m2!1sid!2sid!4v1700061810158!5m2!1sid!2sid"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <section class="footer-content">
+        <div class="footer-flex">
+          <div class="footer-list">
+            <h2>Coursty</h2>
+            <p>Coursty adalah penyedia utama kursus yang dikhususkan dalam persiapan untuk ...</p>
+
+            <div class="btn">
+              <a href="#about" class="btn-warning">Lainnya</a>
+            </div>
+          </div>
+
+          <div class="footer-list">
+            <h2>Halaman</h2>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#course">Course</a></li>
+              <li><a href="#testimony">Testimony</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-list">
+            <h2>Hubungi Kami</h2>
+            <p>Email: demo@email.comm</p>
+            <p>Phone: +62 8622 6262 6262</p>
+          </div>
+
+          <div class="footer-list social-icons">
+            <h2>Follow Account</h2>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">Instagram</a>
+          </div>
+        </div>
+
+        <div class="container">
+          <hr />
+          <p class="cr">&copy; Copyright 2023 | Ariel Gema Wardana</p>
+        </div>
+      </section>
+    </footer>
+
+    <!-- script -->
+    <script src="js/main.js"></script>
   </body>
 </html>

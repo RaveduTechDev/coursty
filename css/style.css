@@ -1,0 +1,1371 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+/* first warna */
+:root {
+  --color-success: #06b471;
+  --color-warning: #f4b451;
+  --color-danger: #f84444;
+  --color-secondary: #ecf0f3;
+  --color-light: #292a3a;
+  --color-dark: #fff;
+}
+/* end warna */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: var(--color-secondary);
+  box-sizing: border-box;
+}
+
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.container {
+  margin: 0 5rem;
+}
+
+header {
+  width: 100%;
+  font-weight: 700;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* nav scrolling */
+header.scrolling {
+  z-index: 1;
+  background-color: var(--color-success);
+  box-shadow: 0 0 10px rgba(7, 7, 7, 0.527);
+}
+
+header.scrolling .logo h1 a {
+  color: var(--color-dark);
+  transition: all 300ms;
+}
+
+header.scrolling nav ul li a {
+  color: var(--color-dark);
+}
+
+header.scrolling nav ul li a:hover {
+  color: var(--color-light);
+}
+
+header.scrolling nav ul li a::after {
+  content: "";
+  background-color: var(--color-light);
+  height: 2px;
+  display: block;
+  width: 0%;
+  margin-left: 1px;
+  margin-top: 2px;
+  transition: all 300ms;
+  margin: auto;
+}
+
+header.scrolling nav ul li a:hover::after {
+  width: 100%;
+}
+
+header.scrolling nav ul li a.active {
+  color: var(--color-light);
+}
+
+header.scrolling nav ul li a.active::after {
+  content: "";
+  background-color: var(--color-light);
+  height: 2px;
+  display: block;
+  width: 100%;
+  margin-left: 1px;
+  margin-top: 2px;
+}
+
+header.scrolling .course-dropdown {
+  background-color: var(--color-success);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+header.scrolling .course-dropdown a {
+  color: var(--color-dark);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+header.scrolling .course-dropdown a::after {
+  display: none;
+}
+
+/* nav default */
+
+.navbar {
+  padding: 1rem 0;
+  margin: 0 auto;
+  max-width: 1300px;
+  display: flex;
+}
+
+.logo {
+  display: inline;
+  flex: 1 1;
+}
+
+/* .logo h1 {
+} */
+
+.logo h1 a {
+  color: var(--color-success);
+  text-decoration: none;
+}
+
+nav ul {
+  align-items: center;
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0.7rem 0 0 2.2rem;
+}
+
+.course-dropdown {
+  border-radius: 0 0 10px 10px;
+  display: none;
+  position: absolute;
+  background-color: var(--color-secondary);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.course-dropdown a {
+  color: var(--color-light);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.course-dropdown a::after {
+  display: none;
+}
+
+li:hover .course-dropdown {
+  display: block;
+}
+
+li:hover .segitiga {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-light);
+  transition: all 300ms;
+}
+
+nav ul li a:hover {
+  color: var(--color-success);
+}
+
+nav ul li a::after {
+  content: "";
+  background-color: var(--color-success);
+  height: 2px;
+  display: block;
+  width: 0%;
+  margin-left: 1px;
+  margin-top: 2px;
+  transition: all 300ms;
+  margin: auto;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a.active {
+  color: var(--color-success);
+}
+
+nav ul li a.active::after {
+  content: "";
+  background-color: var(--color-success);
+  height: 2px;
+  display: block;
+  width: 100%;
+  margin-top: 2px;
+  margin: 0 auto;
+}
+
+/*Hamburger Menu*/
+.nav-responsive {
+  margin: 13px 20px 20px 0;
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.nav-responsive input {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: -10px;
+  top: -10px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.nav-responsive span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--color-success);
+  border-radius: 3px;
+  transition: all 0.4s;
+  z-index: 3;
+  cursor: pointer;
+}
+
+header.scrolling .nav-responsive span {
+  background-color: var(--color-dark);
+}
+
+/* Hamburger Menu Animation */
+.nav-responsive span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.nav-responsive span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.nav-responsive input:checked ~ span:nth-child(2) {
+  background-color: var(--color-dark);
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.nav-responsive input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+.nav-responsive input:checked ~ span:nth-child(4) {
+  background-color: var(--color-dark);
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+/* home */
+
+#home {
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.home-content {
+  margin-top: 7rem;
+}
+
+.home-mx {
+  justify-content: center;
+}
+
+.kata-welcome {
+  flex: 1 1;
+}
+.kata-welcome .title-wel {
+  margin-bottom: 0.2rem;
+  font-size: 1.5rem;
+  color: var(--color-success);
+}
+
+.kata-welcome h1 {
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  font-size: 3rem;
+}
+
+.kata-welcome p {
+  margin: 0 5rem 3rem 0;
+  line-height: 1.8rem;
+}
+
+.kata-welcome a {
+  display: block;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: var(--color-light);
+  background-color: var(--color-success);
+  width: 150px;
+  border-radius: 20px;
+  padding: 10px 30px;
+  transition: all 300ms;
+}
+
+.kata-welcome a:hover {
+  border: 1px solid var(--color-success);
+  background-color: transparent;
+}
+
+.img-wel {
+  z-index: -5;
+}
+
+.img-wel img {
+  user-select: none;
+  width: 100%;
+  max-height: 500px;
+  height: 100%;
+}
+
+/* about */
+#about {
+  padding-top: 10rem;
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+}
+
+.content-about {
+  display: flex;
+}
+
+.img-about {
+  width: 450px;
+  height: 450px;
+  border-radius: 20px;
+  transition: all 300ms;
+}
+
+.img-about a {
+  color: transparent;
+  text-decoration: none;
+}
+
+.img-about .about-video {
+  background: url(../img/about.jpg) no-repeat center center;
+  background-size: 100% 100%;
+  border-radius: 30px;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  display: block;
+  transition: all 300ms ease;
+}
+
+.img-about .about-video:hover {
+  background: linear-gradient(rgba(54, 245, 96, 0.7), rgba(0, 0, 0, 0.7)), url(../img/about.jpg) no-repeat center center;
+  background-size: 100% 100%;
+  border-radius: 30px;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  transform: rotate(-2deg);
+  display: block;
+}
+
+.about-text {
+  margin-left: 5rem;
+}
+
+.about-text .title {
+  color: var(--color-success);
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.about-text h2 {
+  margin-bottom: 1.2rem;
+  font-size: 2.2rem;
+}
+
+.about-text p {
+  text-align: justify;
+  margin-bottom: 1rem;
+  line-height: 1.8rem;
+}
+
+.about-text .pemilik {
+  margin-top: 3rem;
+  display: flex;
+}
+
+.about-text .pemilik .identitas {
+  align-items: center;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.about-text .pemilik .identitas h4 {
+  font-size: 1.3rem;
+}
+
+.about-text .pemilik .identitas p {
+  color: var(--color-success);
+}
+
+.about-text .pemilik .lingkaran {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--color-success);
+}
+
+.about-text .pemilik .lingkaran img {
+  width: 60px;
+  height: 60px;
+  user-select: none;
+}
+
+/* course */
+
+#course h2 {
+  color: var(--color-success);
+  margin: 7em 0 0;
+  text-align: center;
+}
+
+#course .paragraph {
+  text-align: center;
+  margin: 0.7rem 0 12rem;
+}
+
+.bg-course {
+  background-color: var(--color-success);
+  padding-bottom: 5rem;
+}
+
+.course-content {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.course-content .card-a {
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+.course-card {
+  background-color: var(--color-dark);
+  border-radius: 1rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  margin: -7rem 2rem 0;
+  padding: 1rem;
+  max-width: 100%;
+  transition: all 300ms ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4%);
+}
+
+.course-card img {
+  border-radius: 0.5rem;
+  max-width: 300px;
+  width: 100%;
+}
+
+.course-card h3 {
+  color: var(--color-light);
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.course-card .course-p {
+  color: var(--color-light);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.course-card .course-p p {
+  flex: 1;
+}
+
+.course-card .course-p .bintang {
+  user-select: none;
+  font-size: 0.8rem;
+  color: var(--color-warning);
+}
+
+.btn-c {
+  margin-top: -1.2rem;
+  text-align: center;
+}
+
+.btn-c .btn-course {
+  border: none;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: var(--color-light);
+  background-color: var(--color-warning);
+  width: 200px;
+  border-radius: 20px;
+  padding: 10px 30px;
+  transition: all 100ms;
+}
+
+.btn-c .btn-course:hover {
+  border: 5px solid var(--color-warning);
+  background-color: var(--color-secondary);
+}
+
+/* 
+  cara pilih 
+  tutor-kami
+*/
+.meng-pilih {
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.tutor-kami {
+  flex-wrap: wrap;
+}
+
+.course-card2 {
+  flex: 1 1;
+  background-color: var(--color-dark);
+  border-radius: 1rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  max-width: 100%;
+  margin: 0 2rem;
+  background-color: var(--color-dark);
+  transition: all 300ms;
+}
+
+.course-card2:nth-child(2) {
+  color: var(--color-dark);
+  background-color: var(--color-success);
+}
+
+.course-card2:hover {
+  color: var(--color-dark);
+  background-color: var(--color-success);
+}
+
+.course-card2 p {
+  margin-top: 10px;
+  line-height: 1.8rem;
+}
+
+.course-modal {
+  display: none;
+  animation: modalAnimation 300ms ease;
+}
+
+.course-modal.activePopup {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 10rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: modalAnimation 300ms ease;
+}
+
+@keyframes modalAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.course-modal .course-modal-content {
+  text-align: center;
+  background-color: var(--color-dark);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--color-light);
+  width: 80%;
+  position: relative;
+  z-index: 100;
+}
+
+.course-modal .course-modal-content i {
+  font-size: 4rem;
+  margin: 2rem 0 0;
+  color: var(--color-danger);
+}
+
+.course-modal .course-modal-content h3 {
+  color: var(--color-danger);
+  margin: 10px 0 1rem;
+}
+
+.close {
+  color: var(--color-danger);
+  position: absolute;
+  right: 1.5rem;
+  margin-top: -1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: all 300ms;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* yang dilakukan */
+.apa-yang-dilakukan {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+.apa-yang-dilakukan .title2 {
+  text-align: center;
+  margin: 1rem 0rem 0;
+}
+
+.apa-yang-dilakukan .lkn-kami {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.apa-yang-dilakukan .lkn-content {
+  flex: 1 1;
+  margin-right: 2rem;
+}
+
+.apa-yang-dilakukan .lahh {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.apa-yang-dilakukan .lahh .icon-lkn i {
+  font-size: 1.8rem;
+  background-color: var(--color-success);
+  display: inline;
+  padding: 10px;
+  border-radius: 0.5rem;
+  color: var(--color-secondary);
+}
+
+.apa-yang-dilakukan .lahh h3 {
+  color: var(--color-success);
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+
+.apa-yang-dilakukan .lkn-cuy {
+  margin-bottom: 3rem;
+}
+
+.apa-yang-dilakukan .lkn-cuy p {
+  line-height: 1.8rem;
+  margin-left: 4rem;
+}
+
+.apa-yang-dilakukan .img-bingung {
+  margin: 0 -3rem -3rem 0;
+  z-index: -1;
+  position: relative;
+}
+
+.apa-yang-dilakukan .img-bingung img {
+  max-width: 500px;
+  width: 100%;
+}
+
+/* testmimoni */
+#testimony {
+  background-color: var(--color-success);
+  margin-top: -1rem;
+}
+
+#testimony .title {
+  color: var(--color-dark);
+  text-align: center;
+  padding: 4rem 0 0;
+}
+#testimony .title2 {
+  text-align: center;
+  margin: 0.7rem 0 4rem;
+  color: var(--color-dark);
+}
+
+.testimony-all {
+  margin: auto;
+  max-width: 1450px;
+  width: 100%;
+}
+
+.testimony-all .testimony-body {
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+.testimony-all .testimony-body .testi-slide {
+  width: 500%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  transition: all 1s ease;
+}
+
+.slide-panah {
+  user-select: none;
+  width: 100%;
+  max-width: 1450px;
+  text-align: right;
+  margin-top: 1rem;
+}
+
+#sebelumnya {
+  margin-right: 0.5rem;
+  border: none;
+  color: var(--color-light);
+  background-color: var(--color-warning);
+  padding: 1rem 1.4rem;
+  margin-top: -12rem;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  transition: all 300ms ease;
+}
+
+#sebelumnya:hover {
+  color: var(--color-dark);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#selanjutnya {
+  margin-right: 6rem;
+  border: none;
+  color: var(--color-light);
+  background-color: var(--color-warning);
+  padding: 1rem 1.4rem;
+  margin-top: -12rem;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  transition: all 300ms ease;
+}
+
+#selanjutnya:hover {
+  color: var(--color-dark);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.testimony-all .testimony-body .testimony-card {
+  flex: 1 1;
+  background-color: var(--color-dark);
+  border-radius: 1rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  margin: 0 6rem 3rem;
+  justify-content: center;
+  padding: 1.2rem 5rem;
+  max-width: 100%;
+}
+
+.testimony-all .testimony-body .testimony-card .testimony-content .lingkaran {
+  overflow: hidden;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  border: 9px solid var(--color-dark);
+  background-color: var(--color-dark);
+  margin: auto;
+  margin-top: -5rem;
+}
+
+.testimony-all .testimony-content .lingkaran img {
+  width: 100%;
+  border: 50%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+}
+
+.testimony-all .testimony-content h3 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.testimony-all .testimony-content p {
+  line-height: 1.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.testimony-all .testimony-content .bintang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 1rem;
+  color: var(--color-warning);
+}
+
+/* contact */
+
+#contact {
+  width: 100%;
+  max-width: 1450px;
+  margin: 7rem auto;
+}
+
+#contact .title {
+  text-align: center;
+  color: #06b471;
+}
+
+.contact-content {
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.contact-content .contact-us .contact-card {
+  flex: 1 1;
+  background-color: var(--color-dark);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 0 2rem 0 0;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content .contact-us .contact-card h2 {
+  margin-bottom: 4rem;
+  color: var(--color-success);
+}
+
+.contact-content .contact-us .contact-card hr {
+  color: var(--color-secondary);
+  margin: 1.5rem 0;
+}
+
+.contact-content .contact-item {
+  display: flex;
+}
+
+.contact-content .contact-item i {
+  color: var(--color-success);
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.contact-content .contact-item .contact-detail h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-content .contact-item .contact-detail p {
+  line-height: 1.8rem;
+}
+
+.map-us .map iframe {
+  width: 500px;
+  height: 430px;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-success);
+  color: var(--color-secondary);
+  padding: 20px;
+  text-align: center;
+}
+.footer-content {
+  margin: auto;
+  max-width: 1450px;
+  width: 100%;
+}
+
+.footer-list .btn {
+  margin-top: 2rem;
+}
+
+.footer-list .btn-warning {
+  background-color: var(--color-warning);
+  padding: 0.5rem 1.8rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--color-light);
+}
+
+.footer-list .btn-warning:hover {
+  color: var(--color-dark);
+}
+
+.footer-flex {
+  margin: 0 4rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer-list {
+  flex: 1;
+  margin: 10px;
+  text-align: left;
+}
+
+.footer-list h2 {
+  margin-bottom: 2rem;
+  color: var(--color-dark);
+}
+
+.footer-list p {
+  line-height: 1.8rem;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.footer-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list ul li {
+  margin-bottom: 1rem;
+}
+
+.footer-list ul li a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--color-secondary);
+}
+
+.social-icons a {
+  display: block;
+  margin-right: 10px;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.cr {
+  margin-top: 2rem;
+}
+
+.cr a {
+  color: var(--color-dark);
+  font-weight: 700;
+}
+
+/*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/* = = = = = = = = = = Responsive Styles = = = = = = = = = = */
+/*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+@media screen and (max-width: 1050px) {
+  .img-wel img {
+    max-height: 400px;
+  }
+
+  .kata-welcome h1 {
+    font-size: 2.5rem;
+  }
+
+  .kata-welcome .title-wel {
+    font-size: 1.3rem;
+  }
+
+  .about-text {
+    margin-left: 2rem;
+  }
+
+  .about-text .title {
+    color: var(--color-success);
+    font-size: 1.3rem;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .img-about .about-video {
+    width: 400px;
+    height: 400px;
+  }
+
+  .img-about {
+    width: 400px;
+    height: 400px;
+  }
+
+  .img-about .about-video:hover {
+    width: 400px;
+    height: 400px;
+  }
+
+  .map-us .map iframe {
+    width: 400px;
+    height: 460px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .course-card .course-p p {
+    font-size: 0.7rem;
+  }
+
+  .course-card .course-p .bintang {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home-mx {
+    flex-direction: column-reverse;
+  }
+
+  .kata-welcome {
+    margin-top: 2rem;
+  }
+
+  .kata-welcome p {
+    margin: 0 0rem 3rem 0;
+    text-align: justify;
+  }
+
+  .bg-course {
+    padding-bottom: 0rem;
+  }
+
+  .course-card .course-p p {
+    font-size: 1rem;
+  }
+
+  .course-card .course-p .bintang {
+    font-size: 1rem;
+  }
+
+  .content-about {
+    flex-direction: column;
+  }
+
+  .about-text {
+    margin: 3rem 0 0;
+  }
+
+  .course-content {
+    display: block;
+  }
+
+  .course-card {
+    padding: 2rem;
+    margin: -6rem 8rem 10rem;
+  }
+
+  .course-card img {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .course-content .card-a {
+    margin: 0 3rem;
+  }
+
+  .course-card {
+    margin: -7rem 10rem 10rem;
+  }
+
+  .tutor-kami {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .img-course {
+    text-align: center;
+  }
+
+  .img-course h3 {
+    margin-top: 2rem;
+    text-align: left;
+  }
+  .course-p p {
+    text-align: left;
+  }
+
+  .course-card2 {
+    text-align: justify;
+    margin-bottom: 3rem;
+  }
+
+  .apa-yang-dilakukan .lkn-kami {
+    flex-direction: column;
+  }
+
+  .apa-yang-dilakukan .lkn-cuy {
+    text-align: justify;
+  }
+
+  .contact-content {
+    margin: auto;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .contact-content .contact-us .contact-card {
+    margin: 0;
+  }
+
+  .map-us .map {
+    margin-top: 5rem;
+  }
+
+  .map-us .map iframe {
+    width: 700px;
+    height: 430px;
+  }
+
+  .footer-list {
+    margin-bottom: 2rem;
+    flex: 100%;
+  }
+
+  .footer-list h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 790px) {
+  /* header navigation */
+  nav ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70%;
+    height: 100vh;
+    padding-top: 7rem;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-success);
+    z-index: 1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul li {
+    margin-top: 3rem;
+  }
+
+  nav ul li a.active {
+    color: var(--color-dark);
+  }
+
+  nav ul li a.active::after {
+    display: none;
+  }
+
+  header.scrolling nav ul li a.active::after {
+    display: none;
+  }
+
+  header.scrolling nav ul li a::after {
+    display: none;
+  }
+
+  nav ul.slide {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  #course h2 {
+    margin-top: 5rem;
+  }
+
+  #course .paragraph {
+    margin-bottom: 10rem;
+  }
+
+  .course-card {
+    margin: -6rem 3rem 10rem;
+  }
+
+  .apa-yang-dilakukan {
+    margin-top: 2rem;
+  }
+
+  .apa-yang-dilakukan .img-bingung {
+    margin: 0 0rem -1rem 0;
+  }
+
+  .warna {
+    padding: 10px;
+  }
+  .nav-responsive {
+    display: flex;
+    z-index: 10;
+  }
+
+  .map-us .map iframe {
+    width: 550px;
+    height: 430px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    margin: 0 2rem;
+  }
+
+  nav ul {
+    width: 80%;
+  }
+
+  nav ul li {
+    margin-right: 2rem;
+  }
+
+  .nav-responsive {
+    margin: 13px 0px;
+  }
+
+  .kata-welcome .title-wel {
+    font-size: 1.2rem;
+  }
+
+  .kata-welcome h1 {
+    font-size: 2rem;
+  }
+
+  .img-about .about-video {
+    width: 350px;
+    height: 350px;
+  }
+
+  .img-about {
+    width: 350px;
+    height: 350px;
+  }
+
+  .img-about .about-video:hover {
+    width: 350px;
+    height: 350px;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text .title {
+    font-size: 1.2rem;
+  }
+
+  #course h2 {
+    margin: 4rem 2rem 0;
+  }
+
+  #course .paragraph {
+    margin: 0.7rem 2rem 8rem;
+  }
+
+  .img-course h3 {
+    margin-top: 1rem;
+  }
+
+  .course-card {
+    margin-bottom: 8rem;
+    padding: 1rem;
+  }
+
+  .course-card {
+    padding: 2rem;
+    margin: -6rem auto 8rem;
+  }
+
+  .tutor-kami {
+    margin: 0 -2rem;
+  }
+
+  .apa-yang-dilakukan .title2 {
+    margin: 1rem 2rem 0;
+  }
+
+  .testimony-all .testimony-body .testimony-card {
+    margin: 0 1rem 3rem;
+    padding: 1.2rem 2rem;
+  }
+
+  #selanjutnya {
+    margin-right: 1rem;
+  }
+
+  .map-us .map iframe {
+    width: 300px;
+    height: 430px;
+  }
+
+  .footer-flex {
+    margin: 0 0.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .img-about .about-video {
+    width: 300px;
+    height: 300px;
+  }
+
+  .img-about {
+    width: 300px;
+    height: 300px;
+  }
+
+  .img-about .about-video:hover {
+    width: 300px;
+    height: 300px;
+  }
+
+  .course-card .course-p .bintang {
+    font-size: 0.8rem;
+  }
+}
